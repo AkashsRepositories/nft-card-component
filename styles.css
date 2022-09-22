@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+:root{
+    --very-dark-bg : hsl(217, 54%, 11%);
+    --dark-bg: hsl(216, 50%, 16%);
+    --primary-color: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --font-family: 'Outfit';
+    --thin: 300;
+    --regular: 400;
+    --heavy: 600;
+    --p-font-size: 1.125rem; /* 1.125rem == 18px */
+    --my-name-font-size: 1rem;
+    --card-height: 605px;
+    --card-width: 350px;
+    --nft-image-height: 300px;
+    --nft-image-width: 300px;
+    --creator-img-height: 2rem;
+    --creator-img-width: 2rem;
+    --card-padding: 25px;
+    --general-border-radius: 3%;
+    --small-margin: 1rem;
+    --medium-margin: 2rem;
+    --heavy-margin: 4rem;
+    --small: 1rem;
+    --vsmall-px: 1px;
+    --small-px: 2px;
+    --medium-px: 4px;
+    --large-px: 7px;
+    --medium: 2rem;
+    --large: 3rem;
+}
+
+body{
+    background-color: var(--very-dark-bg);
+    font-family: var(--font-family);
+    color: var(--soft-blue);
+    font-weight: var(--thin);
+}
+
+p{
+    font-size: var(--p-font-size);
+}
+
+.nft-unique-id{
+    display: inline-block;
+    color: var(--white);
+    font-weight: var(--regular);
+    margin-bottom: 0;
+}
+
+.nft-cost{
+    color: var(--cyan);
+    font-weight: var(--heavy);
+}
+
+div.flexbox{
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.card-container{
+    background-color: var(--dark-bg);
+    transition: transform 0.4s ease-in-out 0.2s;
+}
+
+main.card{
+    height: var(--card-height);
+    width: var(--card-width);
+    background-color: var(--card-bg);
+    padding: var(--card-padding);
+    box-shadow: 0px 30px 0px 19px hsl(217deg 57% 10%), 0px 20px 0px 53px hsl(217deg 58% 11%);
+    border-radius: var(--general-border-radius);
+
+}
+
+div.nft-img-container{
+    display: grid;
+    grid-template-columns: 1 var(--nft-image-width);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card__image-nft{
+    height: var(--nft-image-height);
+    width: var(--nft-image-width);
+    border-radius: var(--general-border-radius);
+    grid-area: 1/1/1/1;
+    z-index: 2;
+}
+
+div.nft-view-icon-svg-container{
+    height: var(--nft-image-height);
+    width: var(--nft-image-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cyan);
+    border-radius: var(--general-border-radius);
+    grid-area: 1/1/1/1;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.card__image-avatar{
+    height: var(--creator-img-height);
+    width: var(--creator-img-width);
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    margin-right: var(--small-margin);
+}
+
+div.flex-cost-time{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nft-cost>svg{
+    overflow: visible;
+    padding-top: var(--small-px);
+    margin-right: var(--large-px);
+}
+
+.time-left{
+    font-weight: var(--regular);
+}
+
+.time-left>svg{
+    padding-top: var(--small-px);
+    margin-right: var(--large-px);
+}
+
+.nft-description{
+    margin-bottom: var(--medium-margin);
+}
+
+p.nft-creator-details{
+    margin-bottom: 0;
+    margin-top: var(--small-margin);
+    display: flex;
+    align-items: center;
+    font-size: var(--small);
+    font-weight: var(--regular);
+}
+
+
+
+span.creator-name{
+    margin-left: var(--medium-px);
+    color: var(--white);
+}
+
+div.divider{
+    margin-top: var(--medium-margin);
+    height: var(--vsmall-px);
+    background-color: var(--primary-color);
+}
+
+.attribution a.linkedin{
+    color: white;
+    font-size: var(--my-name-font-size);
+}
+
+footer{
+    margin-top: var(--heavy-margin);
+}
+
+
+/* hover states */
+
+div.card-container:hover{
+    transform: scale(1.1);
+}
+
+div.nft-img-container:hover{
+    cursor: pointer;
+}
+
+div.nft-view-icon-svg-container, img.card__image-nft:hover{
+    /* cursor: pointer; */
+    z-index: 0;
+}
+
+.nft-unique-id:hover, .creator-name:hover{
+    color: var(--cyan);
+    cursor: pointer;
+}
